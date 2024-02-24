@@ -23,6 +23,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CinemaProject
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        welcomewindow.h welcomewindow.cpp welcomewindow.ui
+        registerwindow.h registerwindow.cpp registerwindow.ui
+        Users.h
+        Users.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET CinemaProject APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
