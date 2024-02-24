@@ -21,14 +21,14 @@ LoginWindow::~LoginWindow()
 
 void LoginWindow::on_Login_clicked()
 {
-    for(int i=0; i<100; i++)
+    for(int i=0; i<usersCount; i++)
     {
         if(usernames[i]== ui->Username->text())
         {
             if(passwords[i]==ui->Password->text())
             {
                 hide();
-                WelcomeWindow *welcomeWindow = new WelcomeWindow(this);
+                WelcomeWindow *welcomeWindow = new WelcomeWindow(ages[i],usernames[i],this);
                 welcomeWindow->show();
             }
         }
