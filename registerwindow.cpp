@@ -62,19 +62,24 @@ void RegisterWindow::on_Register_clicked()
     if(age<12)
         ui->BirthStatus->setVisible(true);
     if((!action)&&(!comedy)&&(!horror)&&(!drama)&&(!romance)&&(!other))
-        errors+=1;
-    if((!male)&&(!female))
-        errors+=1;
-    if((!userType_ADMIN)&&(!userType_USER))
-        errors+=1;
-
-
-
-    if(errors!=0)
     {
         ui->FieldsStatus->setVisible(true);
+        errors+=1;
     }
-    else
+    if((!male)&&(!female))
+    {
+        ui->FieldsStatus->setVisible(true);
+        errors+=1;
+    }
+    if((!userType_ADMIN)&&(!userType_USER))
+    {
+        errors+=1;
+        ui->FieldsStatus->setVisible(true);
+    }
+
+
+
+    if(errors==0)
     {
         usernames[usersCount]=ui->Username->text();
         passwords[usersCount]=ui->Password->text();
